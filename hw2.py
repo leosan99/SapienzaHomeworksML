@@ -2,7 +2,7 @@
 # # **HOMEWORK 2 batch version**
 
 # %%
-# %history -f output.txt
+#%history -f output.txt
 
 # %% [markdown]
 # # **Libraries importation**
@@ -17,8 +17,10 @@ from PIL import Image
 from collections import defaultdict
 from matplotlib import pyplot as plt 
 from sklearn.utils.class_weight import compute_class_weight
+from tensorflow import keras
+from keras.regularizers import l2
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dense, Flatten, Dropout
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dense, Flatten, Dropout, BatchNormalization
 from tensorflow.keras.metrics import Precision, Recall, BinaryAccuracy
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
@@ -123,9 +125,6 @@ visualize_dataset(Train)
 model = Sequential()
 
 # %%
-optimizer = Adam(learning_rate=0.001)
-
-# %%
 # Layers
 # (3,3) is the pixel selection, 1 is the translation of pixels
 model.add(Conv2D(32, (3,3), activation='relu', input_shape=(256,256,3)))
@@ -149,6 +148,9 @@ num_classes = 5
 model.add(Dense(num_classes, activation='softmax'))
 
 # %%
+optimizer = Adam(learning_rate=0.001)
+
+# %%
 model.compile(optimizer, loss=tf._losses.CategoricalCrossentropy(), metrics=['accuracy'])
 
 # %%
@@ -160,6 +162,25 @@ model.summary()
 # -    Adjust hyperparameters independently of the first approach.
 # -    Train the model on the training set and evaluate on the test set.
 # -    Collect and analyze metrics as done for the first approach.
+
+# %%
+model = keras.models.Sequential([
+    keras.layers.Flatten(input_shape=(256, 256, 3)),
+    keras.layers.Dense(64, activation='relu', kernel_regularizer=keras.regularizers.l2(0.001)),
+    keras.layers.Dense(32, activation='relu', kernel_regularizer=keras.regularizers.l2(0.001)),
+    keras.layers.Dense(num_classes, activation='softmax')
+])
+
+# %%
+beta_1 = 0.9
+beta_2 = 0.999
+optimizer = Adam(learning_rate=0.01, beta_1=beta_1, beta_2=beta_2)
+
+# %%
+model.compile(optimizer, loss=tf._losses.CategoricalCrossentropy(), metrics=['accuracy'])
+
+# %%
+model.summary
 
 # %% [markdown]
 # ## **Hyperparameter Analysis**
@@ -259,9 +280,32 @@ for batch in Test.as_numpy_iterator():
 print(f'Precision:{pre.result().numpy()}, Recall:{re.result().numpy()}, Accuracy:{acc.result().numpy()}')
 
 # %% [markdown]
-# ## **Results Visualization**
+# # **Results Visualization and Comparison**
 # -    Create visualizations (tables, charts, graphs) to present your results.
 # -    Provide detailed commentary on each visualization, explaining trends or differences observed.
+
+# %% [markdown]
+# ## **Comparison on accuracy between methods**
+
+# %% [markdown]
+# ### **On train**
+
+# %%
+fig=plt.figure(figsize=(16, 8))
+# insert comparison on accuracies
+
+plt.suptitle('Model accuracy comparison on train', fontsize=14)
+plt.show()
+
+# %% [markdown]
+# ### **On Test**
+
+# %%
+fig=plt.figure(figsize=(16, 8))
+# insert comparison on accuracies
+
+plt.suptitle('Model accuracy comparison on test', fontsize=14)
+plt.show()
 
 # %% [markdown]
 # ## **Fine-Tuning**

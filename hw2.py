@@ -2,7 +2,7 @@
 # # **HOMEWORK 2 batch version**
 
 # %%
-#%history -f output.txt
+# %history -f output.txt
 
 # %% [markdown]
 # # **Libraries importation**
@@ -17,10 +17,8 @@ from PIL import Image
 from collections import defaultdict
 from matplotlib import pyplot as plt 
 from sklearn.utils.class_weight import compute_class_weight
-from tensorflow import keras
-from keras.regularizers import l2
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dense, Flatten, Dropout, BatchNormalization
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dense, Flatten, Dropout
 from tensorflow.keras.metrics import Precision, Recall, BinaryAccuracy
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
@@ -122,7 +120,10 @@ visualize_dataset(Train)
 # -   Collect and analyze metrics such as accuracy, precision, recall, and F1 score.
 
 # %%
-model = []
+model = Sequential()
+
+# %%
+optimizer = Adam(learning_rate=0.001)
 
 # %%
 # Layers
@@ -146,9 +147,6 @@ model.add(Dropout(0.5)) # Dropout layer to reduce overfitting
 
 num_classes = 5
 model.add(Dense(num_classes, activation='softmax'))
-
-# %%
-optimizer = Adam(learning_rate=0.001)
 
 # %%
 model.compile(optimizer, loss=tf._losses.CategoricalCrossentropy(), metrics=['accuracy'])

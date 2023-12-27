@@ -1,0 +1,230 @@
+Script started on 2023-12-25 22:05:26+01:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="188" LINES="13"]
+[?2004h]0;leonardo@Leo-NB: ~/Documenti/ml2324/homework2[01;32mleonardo@Leo-NB[00m:[01;34m~/Documenti/ml2324/homework2[00m$ mode.predict??
+[?2004lmode.predict??: comando non trovato
+[?2004h]0;leonardo@Leo-NB: ~/Documenti/ml2324/homework2[01;32mleonardo@Leo-NB[00m:[01;34m~/Documenti/ml2324/homework2[00m$ model.preid[K[Kdict??
+[?2004lmodel.predict??: comando non trovato
+[?2004h]0;leonardo@Leo-NB: ~/Documenti/ml2324/homework2[01;32mleonardo@Leo-NB[00m:[01;34m~/Documenti/ml2324/homework2[00m$ ^[[200~code --install-extension James-Yu.latex-workshop
+[?2004l[200~code: comando non trovato
+[?2004h]0;leonardo@Leo-NB: ~/Documenti/ml2324/homework2[01;32mleonardo@Leo-NB[00m:[01;34m~/Documenti/ml2324/homework2[00m$ ~[7mcode --install-extension James-Yu.latex-workshop[27m
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccode --install-extension James-Yu.latex-workshop
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[C[C[C[C[C[C[C[C
+[?2004lInstalling extensions...
+Installing extension 'james-yu.latex-workshop'...
+(node:4797) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+(Use `code --trace-deprecation ...` to show where the warning was created)
+Extension 'james-yu.latex-workshop' v9.16.1 was successfully installed.
+[?2004h]0;leonardo@Leo-NB: ~/Documenti/ml2324/homework2[01;32mleonardo@Leo-NB[00m:[01;34m~/Documenti/ml2324/homework2[00m$ sudo apt [K-get install texlive-xetex texlive-fonts-reccome[K[K[K[K[Kcommended tex-live[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcode --install-extension James-Yu.latex-workshop[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7@^[[200~[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmodel.predict??[K[1P.predict??[K[K[K[K[K[K[K[K[K[K[K[K[K[K^[[200~sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-plain-generic~[1P[1P[1P[1P[1P[2P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[?2004l[sudo] password di leonardo: 
+Lettura elenco dei pacchetti... 0%Lettura elenco dei pacchetti... 100%Lettura elenco dei pacchetti... Fatto
+Generazione albero delle dipendenze... 0%Generazione albero delle dipendenze... 0%Generazione albero delle dipendenze... 50%Generazione albero delle dipendenze... 50%Generazione albero delle dipendenze... Fatto
+Lettura informazioni sullo stato... 0%      Lettura informazioni sullo stato... 0%Lettura informazioni sullo stato... Fatto
+I seguenti pacchetti aggiuntivi saranno inoltre installati:
+  dvisvgm fonts-lato fonts-lmodern fonts-texgyre libapache-pom-java libcommons-logging-java libcommons-parent-java libfontbox-java libpdfbox-java libptexenc1 libruby3.0 libteckit0
+  libtexlua53 libtexluajit2 libzzip-0-13 lmodern preview-latex-style rake ruby ruby-net-telnet ruby-rubygems ruby-webrick ruby-xmlrpc ruby3.0 rubygems-integration t1utils teckit
+  tex-common tex-gyre texlive-base texlive-binaries texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-pictures tipa
+Pacchetti suggeriti:
+  libavalon-framework-java libcommons-logging-java-doc libexcalibur-logkit-java liblog4j1.2-java ri ruby-dev bundler debhelper perl-tk xzdec texlive-fonts-recommended-doc
+  texlive-latex-base-doc python3-pygments icc-profiles libfile-which-perl libspreadsheet-parseexcel-perl texlive-latex-extra-doc texlive-latex-recommended-doc texlive-luatex
+  texlive-pstricks dot2tex prerex texlive-pictures-doc vprerex default-jre-headless tipa-doc
+I seguenti pacchetti NUOVI saranno installati:
+  dvisvgm fonts-lato fonts-lmodern fonts-texgyre libapache-pom-java libcommons-logging-java libcommons-parent-java libfontbox-java libpdfbox-java libptexenc1 libruby3.0 libteckit0
+  libtexlua53 libtexluajit2 libzzip-0-13 lmodern preview-latex-style rake ruby ruby-net-telnet ruby-rubygems ruby-webrick ruby-xmlrpc ruby3.0 rubygems-integration t1utils teckit
+  tex-common tex-gyre texlive-base texlive-binaries texlive-fonts-recommended texlive-latex-base texlive-latex-extra texlive-latex-recommended texlive-pictures texlive-plain-generic
+  texlive-xetex tipa
+0 aggiornati, 39 installati, 0 da rimuovere e 48 non aggiornati.
+È necessario scaricare 164 MB di archivi.
+Dopo quest'operazione, verranno occupati 507 MB di spazio su disco.
+Continuare? [S/n] s
+0% [In lavorazione]                   Scaricamento di:1 http://it.archive.ubuntu.com/ubuntu jammy/main amd64 fonts-lato all 2.0-2.1 [2.696 kB]
+0% [1 fonts-lato 13,9 kB/2.696 kB 1%]1% [1 fonts-lato 2.442 kB/2.696 kB 91%]1% [1 fonts-lato 2.696 kB/2.696 kB 100%]                                        2% [In lavorazione]                   Scaricamento di:2 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 tex-common all 6.17 [33,7 kB]
+2% [2 tex-common 1.129 B/33,7 kB 3%]                                    2% [In attesa degli header]                           Scaricamento di:3 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 dvisvgm amd64 2.13.1-1 [1.221 kB]
+2% [3 dvisvgm 16,7 kB/1.221 kB 1%]                                  3% [In attesa degli header]                           Scaricamento di:4 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 fonts-lmodern all 2.004.5-6.1 [4.532 kB]
+3% [4 fonts-lmodern 19,7 kB/4.532 kB 0%]6% [4 fonts-lmodern 4.345 kB/4.532 kB 96%]                                          6% [In lavorazione]                   Scaricamento di:5 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 fonts-texgyre all 20180621-3.1 [10,2 MB]
+6% [5 fonts-texgyre 4.310 B/10,2 MB 0%]8% [5 fonts-texgyre 4.043 kB/10,2 MB 40%]11% [5 fonts-texgyre 9.020 kB/10,2 MB 88%]                                          12% [In attesa degli header]                            Scaricamento di:6 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 libapache-pom-java all 18-1 [4.720 B]
+12% [In attesa degli header]                            Scaricamento di:7 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 libcommons-parent-java all 43-1 [10,8 kB]
+12% [7 libcommons-parent-java 10,8 kB/10,8 kB 100%]                                                   13% [In lavorazione]                    Scaricamento di:8 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 libcommons-logging-java all 1.2-2 [60,3 kB]
+13% [8 libcommons-logging-java 1.562 B/60,3 kB 3%]                                                  13% [In attesa degli header]                            Scaricamento di:9 http://it.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libptexenc1 amd64 2021.20210626.59705-1ubuntu0.1 [39,1 kB]
+13% [9 libptexenc1 36,1 kB/39,1 kB 92%]                                       14% [In lavorazione]                    Scaricamento di:10 http://it.archive.ubuntu.com/ubuntu jammy/main amd64 rubygems-integration all 1.18 [5.336 B]
+14% [10 rubygems-integration 5.336 B/5.336 B 100%]                                                  14% [In lavorazione]                    Scaricamento di:11 http://it.archive.ubuntu.com/ubuntu jammy-updates/main amd64 ruby3.0 amd64 3.0.2-7ubuntu2.4 [50,1 kB]
+14% [11 ruby3.0 26,5 kB/50,1 kB 53%]                                    15% [In attesa degli header]                            Scaricamento di:12 http://it.archive.ubuntu.com/ubuntu jammy/main amd64 ruby-rubygems all 3.3.5-2 [228 kB]
+15% [12 ruby-rubygems 265 B/228 kB 0%]                                      15% [In attesa degli header]                            Scaricamento di:13 http://it.archive.ubuntu.com/ubuntu jammy/main amd64 ruby amd64 1:3.0~exp1 [5.100 B]
+                            Scaricamento di:14 http://it.archive.ubuntu.com/ubuntu jammy/main amd64 rake all 13.0.6-2 [61,7 kB]
+16% [14 rake 31,8 kB/61,7 kB 51%]                                 17% [In attesa degli header]                            Scaricamento di:15 http://it.archive.ubuntu.com/ubuntu jammy/main amd64 ruby-net-telnet all 0.1.1-2 [12,6 kB]
+17% [15 ruby-net-telnet 12,6 kB/12,6 kB 100%]                                             17% [In lavorazione]                    Scaricamento di:16 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 ruby-webrick all 1.7.0-3 [51,8 kB]
+17% [16 ruby-webrick 1.129 B/51,8 kB 2%]                                        18% [In attesa degli header]                            Scaricamento di:17 http://it.archive.ubuntu.com/ubuntu jammy-updates/main amd64 ruby-xmlrpc all 0.3.2-1ubuntu0.1 [24,9 kB]
+18% [17 ruby-xmlrpc 5.389 B/24,9 kB 22%]                                        18% [In lavorazione]                    Scaricamento di:18 http://it.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libruby3.0 amd64 3.0.2-7ubuntu2.4 [5.113 kB]
+18% [18 libruby3.0 5.385 B/5.113 kB 0%]20% [18 libruby3.0 4.172 kB/5.113 kB 82%]                                         21% [In attesa degli header]                            Scaricamento di:19 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 libteckit0 amd64 2.5.11+ds1-1 [421 kB]
+21% [19 libteckit0 56,9 kB/421 kB 14%]                                      22% [In attesa degli header]                            Scaricamento di:20 http://it.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libtexlua53 amd64 2021.20210626.59705-1ubuntu0.1 [120 kB]
+22% [20 libtexlua53 11,6 kB/120 kB 10%]                                       22% [In attesa degli header]                            Scaricamento di:21 http://it.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libtexluajit2 amd64 2021.20210626.59705-1ubuntu0.1 [267 kB]
+22% [21 libtexluajit2 52,1 kB/267 kB 19%]                                         23% [In attesa degli header]                            Scaricamento di:22 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 libzzip-0-13 amd64 0.13.72+dfsg.1-1.1 [27,0 kB]
+23% [22 libzzip-0-13 20,5 kB/27,0 kB 76%]                                         24% [In lavorazione]                    Scaricamento di:23 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 lmodern all 2.004.5-6.1 [9.471 kB]
+24% [23 lmodern 12,3 kB/9.471 kB 0%]26% [23 lmodern 3.965 kB/9.471 kB 42%]27% [23 lmodern 7.733 kB/9.471 kB 82%]                                      29% [In attesa degli header]                            Scaricamento di:24 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 preview-latex-style all 12.2-1ubuntu1 [185 kB]
+29% [24 preview-latex-style 18,3 kB/185 kB 10%]                                               29% [In lavorazione]                    Scaricamento di:25 http://it.archive.ubuntu.com/ubuntu jammy/main amd64 t1utils amd64 1.41-4build2 [61,3 kB]
+29% [25 t1utils 3.834 B/61,3 kB 6%]                                   30% [In lavorazione]                    Scaricamento di:26 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 teckit amd64 2.5.11+ds1-1 [699 kB]
+30% [26 teckit 10,4 kB/699 kB 1%]                                 31% [In attesa degli header]                            Scaricamento di:27 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 tex-gyre all 20180621-3.1 [6.209 kB]
+31% [27 tex-gyre 2.188 B/6.209 kB 0%]32% [27 tex-gyre 3.625 kB/6.209 kB 58%]                                                                                                                                      6.172 kB/s 20s34% [In attesa degli header]                                                                                                                                                 6.172 kB/s 19s                                                                                                                                                                                           Scaricamento di:28 http://it.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 texlive-binaries amd64 2021.20210626.59705-1ubuntu0.1 [9.848 kB]
+34% [28 texlive-binaries 46,7 kB/9.848 kB 0%]                                                                                                                                6.172 kB/s 19s36% [28 texlive-binaries 3.808 kB/9.848 kB 39%]                                                                                                                              6.172 kB/s 19s39% [28 texlive-binaries 9.378 kB/9.848 kB 95%]                                                                                                                              6.172 kB/s 18s40% [In lavorazione]                                                                                                                                                         6.172 kB/s 18s                                                                                                                                                                                           Scaricamento di:29 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 texlive-base all 2021.20220204-1 [21,0 MB]
+40% [29 texlive-base 28,5 kB/21,0 MB 0%]                                                                                                                                     6.172 kB/s 18s41% [29 texlive-base 3.871 kB/21,0 MB 18%]                                                                                                                                   6.172 kB/s 17s43% [29 texlive-base 7.258 kB/21,0 MB 35%]                                                                                                                                   6.172 kB/s 17s45% [29 texlive-base 12,2 MB/21,0 MB 58%]                                                                                                                                    6.172 kB/s 16s48% [29 texlive-base 17,1 MB/21,0 MB 81%]                                                                                                                                    6.172 kB/s 15s50% [In attesa degli header]                                                                                                                                                 6.172 kB/s 14s                                                                                                                                                                                           Scaricamento di:30 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 texlive-fonts-recommended all 2021.20220204-1 [4.972 kB]
+50% [30 texlive-fonts-recommended 34,5 kB/4.972 kB 1%]                                                                                                                       6.172 kB/s 14s53% [30 texlive-fonts-recommended 4.796 kB/4.972 kB 96%]                                                                                                                     6.172 kB/s 14s53% [In attesa degli header]                                                                                                                                                 6.172 kB/s 13s                                                                                                                                                                                           Scaricamento di:31 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 texlive-latex-base all 2021.20220204-1 [1.128 kB]
+53% [31 texlive-latex-base 36,0 kB/1.128 kB 3%]                                                                                                                              6.172 kB/s 13s54% [In attesa degli header]                                                                                                                                                 6.172 kB/s 13s                                                                                                                                                                                           Scaricamento di:32 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 libfontbox-java all 1:1.8.16-2 [207 kB]
+54% [32 libfontbox-java 20,5 kB/207 kB 10%]                                                                                                                                  6.172 kB/s 13s55% [In attesa degli header]                                                                                                                                                 6.172 kB/s 13s                                                                                                                                                                                           Scaricamento di:33 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 libpdfbox-java all 1:1.8.16-2 [5.199 kB]
+55% [33 libpdfbox-java 20,1 kB/5.199 kB 0%]                                                                                                                                  6.172 kB/s 13s57% [33 libpdfbox-java 4.903 kB/5.199 kB 94%]                                                                                                                                6.172 kB/s 12s58% [In attesa degli header]                                                                                                                                                 6.172 kB/s 12s                                                                                                                                                                                           Scaricamento di:34 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 texlive-latex-recommended all 2021.20220204-1 [14,4 MB]
+58% [34 texlive-latex-recommended 56,2 kB/14,4 MB 0%]                                                                                                                        6.172 kB/s 12s60% [34 texlive-latex-recommended 4.134 kB/14,4 MB 29%]                                                                                                                      6.172 kB/s 12s63% [34 texlive-latex-recommended 9.253 kB/14,4 MB 64%]                                                                                                                       8.906 kB/s 7s64% [34 texlive-latex-recommended 12,2 MB/14,4 MB 85%]                                                                                                                        8.906 kB/s 7s65% [34 texlive-latex-recommended 14,1 MB/14,4 MB 98%]                                                                                                                        8.906 kB/s 7s66% [In lavorazione]                                                                                                                                                          8.906 kB/s 7s                                                                                                                                                                                           Scaricamento di:35 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 texlive-pictures all 2021.20220204-1 [8.720 kB]
+66% [35 texlive-pictures 8.239 B/8.720 kB 0%]                                                                                                                                 8.906 kB/s 7s66% [35 texlive-pictures 1.887 kB/8.720 kB 22%]                                                                                                                               8.906 kB/s 7s68% [35 texlive-pictures 5.741 kB/8.720 kB 66%]                                                                                                                               8.906 kB/s 6s70% [In attesa degli header]                                                                                                                                                  8.906 kB/s 6s                                                                                                                                                                                           Scaricamento di:36 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 texlive-latex-extra all 2021.20220204-1 [13,9 MB]
+70% [36 texlive-latex-extra 19,2 kB/13,9 MB 0%]                                                                                                                               8.906 kB/s 6s72% [36 texlive-latex-extra 3.277 kB/13,9 MB 24%]                                                                                                                             8.906 kB/s 6s74% [36 texlive-latex-extra 7.335 kB/13,9 MB 53%]                                                                                                                             8.906 kB/s 5s75% [36 texlive-latex-extra 10,0 MB/13,9 MB 72%]                                                                                                                              8.906 kB/s 5s78% [In attesa degli header]                                                                                                                                                  8.906 kB/s 4s                                                                                                                                                                                           Scaricamento di:37 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 texlive-plain-generic all 2021.20220204-1 [27,5 MB]
+78% [37 texlive-plain-generic 41,0 kB/27,5 MB 0%]                                                                                                                             8.906 kB/s 4s80% [37 texlive-plain-generic 4.455 kB/27,5 MB 16%]                                                                                                                           8.906 kB/s 4s81% [37 texlive-plain-generic 7.854 kB/27,5 MB 29%]                                                                                                                           8.906 kB/s 3s84% [37 texlive-plain-generic 12,3 MB/27,5 MB 45%]                                                                                                                            8.906 kB/s 3s85% [37 texlive-plain-generic 15,1 MB/27,5 MB 55%]                                                                                                                            6.806 kB/s 4s87% [37 texlive-plain-generic 19,5 MB/27,5 MB 71%]                                                                                                                            6.806 kB/s 3s89% [37 texlive-plain-generic 23,7 MB/27,5 MB 86%]                                                                                                                            6.806 kB/s 2s91% [37 texlive-plain-generic 27,2 MB/27,5 MB 99%]                                                                                                                            6.806 kB/s 2s92% [In attesa degli header]                                                                                                                                                  6.806 kB/s 2s                                                                                                                                                                                           Scaricamento di:38 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 tipa all 2:1.3-21 [2.967 kB]
+92% [38 tipa 11,8 kB/2.967 kB 0%]                                                                                                                                             6.806 kB/s 2s93% [38 tipa 2.729 kB/2.967 kB 92%]                                                                                                                                           6.806 kB/s 1s93% [In attesa degli header]                                                                                                                                                  6.806 kB/s 1s                                                                                                                                                                                           Scaricamento di:39 http://it.archive.ubuntu.com/ubuntu jammy/universe amd64 texlive-xetex all 2021.20220204-1 [12,4 MB]
+93% [39 texlive-xetex 3.918 B/12,4 MB 0%]                                                                                                                                     6.806 kB/s 1s95% [39 texlive-xetex 4.074 kB/12,4 MB 33%]                                                                                                                                   6.806 kB/s 1s97% [39 texlive-xetex 8.146 kB/12,4 MB 66%]                                                                                                                                   6.806 kB/s 0s100% [In lavorazione]                                                                                                                                                         6.806 kB/s 0s                                                                                                                                                                                           Recuperati 164 MB in 22s (7.334 kB/s)
+Estrazione dei template dai pacchetti: 76%Estrazione dei template dai pacchetti: 100%
+Preconfigurazione dei pacchetti in corso
+Selezionato il pacchetto fonts-lato non precedentemente selezionato.
+(Lettura del database... (Lettura del database... 5%(Lettura del database... 10%(Lettura del database... 15%(Lettura del database... 20%(Lettura del database... 25%(Lettura del database... 30%(Lettura del database... 35%(Lettura del database... 40%(Lettura del database... 45%(Lettura del database... 50%(Lettura del database... 55%(Lettura del database... 60%(Lettura del database... 65%(Lettura del database... 70%(Lettura del database... 75%(Lettura del database... 80%(Lettura del database... 85%(Lettura del database... 90%(Lettura del database... 95%(Lettura del database... 100%(Lettura del database... 216587 file e directory attualmente installati.)
+Preparativi per estrarre .../00-fonts-lato_2.0-2.1_all.deb...
+Estrazione di fonts-lato (2.0-2.1)...
+Selezionato il pacchetto tex-common non precedentemente selezionato.
+Preparativi per estrarre .../01-tex-common_6.17_all.deb...
+Estrazione di tex-common (6.17)...
+Selezionato il pacchetto dvisvgm non precedentemente selezionato.
+Preparativi per estrarre .../02-dvisvgm_2.13.1-1_amd64.deb...
+Estrazione di dvisvgm (2.13.1-1)...
+Selezionato il pacchetto fonts-lmodern non precedentemente selezionato.
+Preparativi per estrarre .../03-fonts-lmodern_2.004.5-6.1_all.deb...
+Estrazione di fonts-lmodern (2.004.5-6.1)...
+Selezionato il pacchetto fonts-texgyre non precedentemente selezionato.
+Preparativi per estrarre .../04-fonts-texgyre_20180621-3.1_all.deb...
+Estrazione di fonts-texgyre (20180621-3.1)...
+Selezionato il pacchetto libapache-pom-java non precedentemente selezionato.
+Preparativi per estrarre .../05-libapache-pom-java_18-1_all.deb...
+Estrazione di libapache-pom-java (18-1)...
+Selezionato il pacchetto libcommons-parent-java non precedentemente selezionato.
+Preparativi per estrarre .../06-libcommons-parent-java_43-1_all.deb...
+Estrazione di libcommons-parent-java (43-1)...
+Selezionato il pacchetto libcommons-logging-java non precedentemente selezionato.
+Preparativi per estrarre .../07-libcommons-logging-java_1.2-2_all.deb...
+Estrazione di libcommons-logging-java (1.2-2)...
+Selezionato il pacchetto libptexenc1:amd64 non precedentemente selezionato.
+Preparativi per estrarre .../08-libptexenc1_2021.20210626.59705-1ubuntu0.1_amd64.deb...
+Estrazione di libptexenc1:amd64 (2021.20210626.59705-1ubuntu0.1)...
+Selezionato il pacchetto rubygems-integration non precedentemente selezionato.
+Preparativi per estrarre .../09-rubygems-integration_1.18_all.deb...
+Estrazione di rubygems-integration (1.18)...
+Selezionato il pacchetto ruby3.0 non precedentemente selezionato.
+Preparativi per estrarre .../10-ruby3.0_3.0.2-7ubuntu2.4_amd64.deb...
+Estrazione di ruby3.0 (3.0.2-7ubuntu2.4)...
+Selezionato il pacchetto ruby-rubygems non precedentemente selezionato.
+Preparativi per estrarre .../11-ruby-rubygems_3.3.5-2_all.deb...
+Estrazione di ruby-rubygems (3.3.5-2)...
+Selezionato il pacchetto ruby non precedentemente selezionato.
+Preparativi per estrarre .../12-ruby_1%3a3.0~exp1_amd64.deb...
+Estrazione di ruby (1:3.0~exp1)...
+Selezionato il pacchetto rake non precedentemente selezionato.
+Preparativi per estrarre .../13-rake_13.0.6-2_all.deb...
+Estrazione di rake (13.0.6-2)...
+Selezionato il pacchetto ruby-net-telnet non precedentemente selezionato.
+Preparativi per estrarre .../14-ruby-net-telnet_0.1.1-2_all.deb...
+Estrazione di ruby-net-telnet (0.1.1-2)...
+Selezionato il pacchetto ruby-webrick non precedentemente selezionato.
+Preparativi per estrarre .../15-ruby-webrick_1.7.0-3_all.deb...
+Estrazione di ruby-webrick (1.7.0-3)...
+Selezionato il pacchetto ruby-xmlrpc non precedentemente selezionato.
+Preparativi per estrarre .../16-ruby-xmlrpc_0.3.2-1ubuntu0.1_all.deb...
+Estrazione di ruby-xmlrpc (0.3.2-1ubuntu0.1)...
+Selezionato il pacchetto libruby3.0:amd64 non precedentemente selezionato.
+Preparativi per estrarre .../17-libruby3.0_3.0.2-7ubuntu2.4_amd64.deb...
+Estrazione di libruby3.0:amd64 (3.0.2-7ubuntu2.4)...
+Selezionato il pacchetto libteckit0:amd64 non precedentemente selezionato.
+Preparativi per estrarre .../18-libteckit0_2.5.11+ds1-1_amd64.deb...
+Estrazione di libteckit0:amd64 (2.5.11+ds1-1)...
+Selezionato il pacchetto libtexlua53:amd64 non precedentemente selezionato.
+Preparativi per estrarre .../19-libtexlua53_2021.20210626.59705-1ubuntu0.1_amd64.deb...
+Estrazione di libtexlua53:amd64 (2021.20210626.59705-1ubuntu0.1)...
+Selezionato il pacchetto libtexluajit2:amd64 non precedentemente selezionato.
+Preparativi per estrarre .../20-libtexluajit2_2021.20210626.59705-1ubuntu0.1_amd64.deb...
+Estrazione di libtexluajit2:amd64 (2021.20210626.59705-1ubuntu0.1)...
+Selezionato il pacchetto libzzip-0-13:amd64 non precedentemente selezionato.
+Preparativi per estrarre .../21-libzzip-0-13_0.13.72+dfsg.1-1.1_amd64.deb...
+Estrazione di libzzip-0-13:amd64 (0.13.72+dfsg.1-1.1)...
+Selezionato il pacchetto lmodern non precedentemente selezionato.
+Preparativi per estrarre .../22-lmodern_2.004.5-6.1_all.deb...
+Estrazione di lmodern (2.004.5-6.1)...
+Selezionato il pacchetto preview-latex-style non precedentemente selezionato.
+Preparativi per estrarre .../23-preview-latex-style_12.2-1ubuntu1_all.deb...
+Estrazione di preview-latex-style (12.2-1ubuntu1)...
+Selezionato il pacchetto t1utils non precedentemente selezionato.
+Preparativi per estrarre .../24-t1utils_1.41-4build2_amd64.deb...
+Estrazione di t1utils (1.41-4build2)...
+Selezionato il pacchetto teckit non precedentemente selezionato.
+Preparativi per estrarre .../25-teckit_2.5.11+ds1-1_amd64.deb...
+Estrazione di teckit (2.5.11+ds1-1)...
+Selezionato il pacchetto tex-gyre non precedentemente selezionato.
+Preparativi per estrarre .../26-tex-gyre_20180621-3.1_all.deb...
+Estrazione di tex-gyre (20180621-3.1)...
+Selezionato il pacchetto texlive-binaries non precedentemente selezionato.
+Preparativi per estrarre .../27-texlive-binaries_2021.20210626.59705-1ubuntu0.1_amd64.deb...
+Estrazione di texlive-binaries (2021.20210626.59705-1ubuntu0.1)...
+Selezionato il pacchetto texlive-base non precedentemente selezionato.
+Preparativi per estrarre .../28-texlive-base_2021.20220204-1_all.deb...
+Estrazione di texlive-base (2021.20220204-1)...
+Selezionato il pacchetto texlive-fonts-recommended non precedentemente selezionato.
+Preparativi per estrarre .../29-texlive-fonts-recommended_2021.20220204-1_all.deb...
+Estrazione di texlive-fonts-recommended (2021.20220204-1)...
+Selezionato il pacchetto texlive-latex-base non precedentemente selezionato.
+Preparativi per estrarre .../30-texlive-latex-base_2021.20220204-1_all.deb...
+Estrazione di texlive-latex-base (2021.20220204-1)...
+Selezionato il pacchetto libfontbox-java non precedentemente selezionato.
+Preparativi per estrarre .../31-libfontbox-java_1%3a1.8.16-2_all.deb...
+Estrazione di libfontbox-java (1:1.8.16-2)...
+Selezionato il pacchetto libpdfbox-java non precedentemente selezionato.
+Preparativi per estrarre .../32-libpdfbox-java_1%3a1.8.16-2_all.deb...
+Estrazione di libpdfbox-java (1:1.8.16-2)...
+Selezionato il pacchetto texlive-latex-recommended non precedentemente selezionato.
+Preparativi per estrarre .../33-texlive-latex-recommended_2021.20220204-1_all.deb...
+Estrazione di texlive-latex-recommended (2021.20220204-1)...
+Selezionato il pacchetto texlive-pictures non precedentemente selezionato.
+Preparativi per estrarre .../34-texlive-pictures_2021.20220204-1_all.deb...
+Estrazione di texlive-pictures (2021.20220204-1)...
+Selezionato il pacchetto texlive-latex-extra non precedentemente selezionato.
+Preparativi per estrarre .../35-texlive-latex-extra_2021.20220204-1_all.deb...
+Estrazione di texlive-latex-extra (2021.20220204-1)...
+Selezionato il pacchetto texlive-plain-generic non precedentemente selezionato.
+Preparativi per estrarre .../36-texlive-plain-generic_2021.20220204-1_all.deb...
+Estrazione di texlive-plain-generic (2021.20220204-1)...
+Selezionato il pacchetto tipa non precedentemente selezionato.
+Preparativi per estrarre .../37-tipa_2%3a1.3-21_all.deb...
+Estrazione di tipa (2:1.3-21)...
+Selezionato il pacchetto texlive-xetex non precedentemente selezionato.
+Preparativi per estrarre .../38-texlive-xetex_2021.20220204-1_all.deb...
+Estrazione di texlive-xetex (2021.20220204-1)...
+Configurazione di fonts-lato (2.0-2.1)...
+Configurazione di libtexlua53:amd64 (2021.20210626.59705-1ubuntu0.1)...
+Configurazione di libtexluajit2:amd64 (2021.20210626.59705-1ubuntu0.1)...
+Configurazione di libfontbox-java (1:1.8.16-2)...
+Configurazione di dvisvgm (2.13.1-1)...
+Configurazione di rubygems-integration (1.18)...
+Configurazione di libzzip-0-13:amd64 (0.13.72+dfsg.1-1.1)...
+Configurazione di tex-common (6.17)...
+update-language: texlive-base not installed and configured, doing nothing!
+Configurazione di libptexenc1:amd64 (2021.20210626.59705-1ubuntu0.1)...
+Configurazione di libteckit0:amd64 (2.5.11+ds1-1)...
+Configurazione di libapache-pom-java (18-1)...
+Configurazione di ruby-net-telnet (0.1.1-2)...
+Configurazione di t1utils (1.41-4build2)...
+Configurazione di fonts-texgyre (20180621-3.1)...
+Configurazione di ruby-webrick (1.7.0-3)...
+Configurazione di texlive-binaries (2021.20210626.59705-1ubuntu0.1)...
+update-alternatives: viene usato /usr/bin/xdvi-xaw per fornire /usr/bin/xdvi.bin (xdvi.bin) in modalità automatica
+update-alternatives: viene usato /usr/bin/bibtex.original per fornire /usr/bin/bibtex (bibtex) in modalità automatica
+Configurazione di fonts-lmodern (2.004.5-6.1)...
+Configurazione di texlive-base (2021.20220204-1)...
+/usr/bin/ucfr
+/usr/bin/ucfr
+/usr/bin/ucfr
+/usr/bin/ucfr
+mktexlsr: Updating /var/lib/texmf/ls-R-TEXLIVEDIST... 
+mktexlsr: Updating /var/lib/texmf/ls-R-TEXMFMAIN... 
+mktexlsr: Updating /var/lib/texmf/ls-R... 
+mktexlsr: Done.
+tl-paper: setting paper size for dvips to a4: /var/lib/texmf/dvips/config/config-paper.ps
+tl-paper: setting paper size for dvipdfmx to a4: /var/lib/texmf/dvipdfmx/dvipdfmx-paper.cfg
+tl-paper: setting paper size for xdvi to a4: /var/lib/texmf/xdvi/XDvi-paper
+tl-paper: setting paper size for pdftex to a4: 

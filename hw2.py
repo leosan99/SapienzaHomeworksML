@@ -23,6 +23,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dense, Flatten, Dropout, BatchNormalization
 from tensorflow.keras.metrics import Precision, Recall, BinaryAccuracy
 from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 print('libraries imported')
@@ -43,27 +44,41 @@ for gpu in gpus:
 # ## **Data Augmentation**
 
 # %%
-datagen = ImageDataGenerator(
-    rotation_range=0,
-    width_shift_range=0,
-    height_shift_range=0,
-    shear_range=0,
-    zoom_range=0,
+datagen_train = ImageDataGenerator(
+    rotation_range=10,
+    width_shift_range=0.2,
+    height_shift_range=0.2,
+    shear_range=0.2,
+    zoom_range=0.2,
     horizontal_flip=True,
-    rescale=1./255
+    rescale=1./255,
+    validation_split=0.2
+)
+
+datagen_val = ImageDataGenerator(
+    rescale=1./255,
+    validation_split=0.2
 )
 
 # %% [markdown]
 # ## **Data Load**
 
 # %%
-Train = datagen.flow_from_directory(
+Train = datagen_train.flow_from_directory(
     'train',
     target_size=(256,256),
     batch_size=32,
-    class_mode='categorical'
+    class_mode='categorical',
+    subset='training'
 )
 
+Val = datagen_val.flow_from_directory(
+    'train',
+    target_size=(256,256),
+    batch_size=32,
+    class_mode='categorical',
+    subset='validation'
+)
 train_labels = []
 train_labels = Train.classes
 num_classes = Train.num_classes
@@ -164,23 +179,42 @@ model.summary()
 # -    Collect and analyze metrics as done for the first approach.
 
 # %%
-model = keras.models.Sequential([
-    keras.layers.Flatten(input_shape=(256, 256, 3)),
-    keras.layers.Dense(64, activation='relu', kernel_regularizer=keras.regularizers.l2(0.001)),
-    keras.layers.Dense(32, activation='relu', kernel_regularizer=keras.regularizers.l2(0.001)),
-    keras.layers.Dense(num_classes, activation='softmax')
-])
+model = Sequential()
+
+# %%
+model.add(Conv2D(32, (3,3), activation='relu', input_shape=(256,256,3), kernel_regularizer=l2(0.001)))
+model.add(BatchNormalization())
+model.add(MaxPooling2D((2,2)))
+
+model.add(Conv2D(64, (3,3), activation='relu', kernel_regularizer=l2(0.001)))
+model.add(BatchNormalization())
+model.add(MaxPooling2D((2,2)))
+
+model.add(Conv2D(128, (3,3), activation='relu', kernel_regularizer=l2(0.001)))
+model.add(BatchNormalization())
+model.add(MaxPooling2D((2,2)))
+
+model.add(Flatten())
+
+model.add(Dense(128, activation='relu', kernel_regularizer=l2(0.001)))
+model.add(BatchNormalization())
+model.add(Dropout(0.5))
+
+num_classes = 5
+model.add(Dense(num_classes, activation='softmax'))
 
 # %%
 beta_1 = 0.9
 beta_2 = 0.999
-optimizer = Adam(learning_rate=0.01, beta_1=beta_1, beta_2=beta_2)
+optimizer = Adam(learning_rate=0.001, beta_1=beta_1, beta_2=beta_2)
 
 # %%
 model.compile(optimizer, loss=tf._losses.CategoricalCrossentropy(), metrics=['accuracy'])
 
 # %%
-model.summary
+model.summary()
+for layer in model.layers:
+    print(layer.output_shape)
 
 # %% [markdown]
 # ## **Hyperparameter Analysis**
@@ -205,6 +239,16 @@ tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=logdir)
 class_labels = np.unique(train_labels)
 class_weights = compute_class_weight(class_weight='balanced', classes=np.unique(train_labels), y=train_labels)
 class_weights_dict = dict(zip(class_labels, class_weights))
+
+# %% [markdown]
+# ### **Fitting with early stopping**
+
+# %%
+early_stopping = EarlyStopping(monitor='loss', patience=5, restore_best_weights=True)
+hist = model.fit(Train, epochs=20, callbacks=[tensorboard_callback, early_stopping], class_weight=class_weights_dict)
+
+# %% [markdown]
+# ### **Fitting without early stopping**
 
 # %%
 hist = model.fit(Train, epochs=20, callbacks=[tensorboard_callback], class_weight=class_weights_dict)

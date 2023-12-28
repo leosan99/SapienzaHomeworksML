@@ -1,3 +1,10 @@
+
+LINEE GUIDA:
+	- hw1 modello funzionante, vedi schema per differente, mi sembra no dropout e no regularization
+	- hw2 modello con bassa accuracy in training perchè alto learning rate e dropout e regularization
+	- hw3 con basso learning rate dropout e regularization
+
+
 Yes, it is possible for the training accuracy to be low during certain epochs while achieving a high accuracy on the test set or during predictions. This situation can be observed due to several reasons:
 
     Early Stopping:

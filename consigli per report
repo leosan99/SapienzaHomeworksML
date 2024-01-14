@@ -23,3 +23,15 @@ Yes, it is possible for the training accuracy to be low during certain epochs wh
         Techniques like data augmentation during training and regularization can influence the model's behavior. Data augmentation introduces variations in the training data, and regularization helps prevent overfitting.
 
 To better understand the model's performance, it's essential to look at metrics on both the training and test sets. If there is a significant discrepancy, it might indicate issues such as overfitting, underfitting, or problems with the training process. Monitoring additional metrics, using validation sets, and experimenting with model architecture and hyperparameters can help improve overall performance.
+
+Model Complexity:
+
+    The complexity of your model also plays a role. If you have a complex model with many parameters, data augmentation can act as a form of regularization, helping to prevent overfitting.
+
+
+
+RISULTATI:
+    - miglioramento di accuracy on train implementing validation and batchnormalization
+    - utilizzo di SGD e riduzione del secondo modello in wider but less deep : SGD non cambia molto,
+    - modifica dell'augmentation: removing zoom and flip seems to help
+    - modifica del datagen per ovviare alla bassa qualità dei datasets

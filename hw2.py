@@ -45,7 +45,7 @@ for gpu in gpus:
 
 # %%
 datagen_train = ImageDataGenerator(
-    rotation_range=10,
+    rotation_range=20,
     width_shift_range=0.2,
     height_shift_range=0.2,
     shear_range=0.2,
@@ -62,6 +62,25 @@ datagen_val = ImageDataGenerator(
 
 # %% [markdown]
 # ## **Data Load**
+
+# %% [markdown]
+# ### **Load without validation**
+
+# %%
+Train = datagen.flow_from_directory(
+    'train',
+    target_size=(256,256),
+    batch_size=32,
+    class_mode='categorical'
+)
+
+train_labels = []
+train_labels = Train.classes
+num_classes = Train.num_classes
+train_labels_one_hot = tf.keras.utils.to_categorical(train_labels, num_classes=num_classes)
+
+# %% [markdown]
+# ### **Load with validation**
 
 # %%
 Train = datagen_train.flow_from_directory(
@@ -165,8 +184,20 @@ model.add(Dense(num_classes, activation='softmax'))
 # %%
 optimizer = Adam(learning_rate=0.001)
 
+# %% [markdown]
+# **Validation ON**
+
 # %%
-model.compile(optimizer, loss=tf._losses.CategoricalCrossentropy(), metrics=['accuracy'])
+metrics = ['accuracy', 'val_accuracy']
+
+# %% [markdown]
+# **Validation OFF**
+
+# %%
+metrics = ['accuracy']
+
+# %%
+model.compile(optimizer, loss=tf._losses.CategoricalCrossentropy(), metrics=metrics)
 
 # %%
 model.summary()
@@ -198,7 +229,7 @@ model.add(Flatten())
 
 model.add(Dense(128, activation='relu', kernel_regularizer=l2(0.001)))
 model.add(BatchNormalization())
-model.add(Dropout(0.5))
+model.add(Dropout(0.3))
 
 num_classes = 5
 model.add(Dense(num_classes, activation='softmax'))
@@ -207,6 +238,15 @@ model.add(Dense(num_classes, activation='softmax'))
 beta_1 = 0.9
 beta_2 = 0.999
 optimizer = Adam(learning_rate=0.001, beta_1=beta_1, beta_2=beta_2)
+
+# %% [markdown]
+# **Validation ON**
+
+# %%
+model.compile(optimizer, loss=tf._losses.CategoricalCrossentropy(), metrics=['accuracy','val_accuracy'])
+
+# %% [markdown]
+# **Validation OFF**
 
 # %%
 model.compile(optimizer, loss=tf._losses.CategoricalCrossentropy(), metrics=['accuracy'])
@@ -232,9 +272,6 @@ for layer in model.layers:
 logdir = 'logs'
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=logdir)
 
-# %% [markdown]
-# **without validation data:**
-
 # %%
 class_labels = np.unique(train_labels)
 class_weights = compute_class_weight(class_weight='balanced', classes=np.unique(train_labels), y=train_labels)
@@ -243,40 +280,71 @@ class_weights_dict = dict(zip(class_labels, class_weights))
 # %% [markdown]
 # ### **Fitting with early stopping**
 
+# %% [markdown]
+# #### **validation OFF**
+
 # %%
-early_stopping = EarlyStopping(monitor='loss', patience=5, restore_best_weights=True)
+early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
 hist = model.fit(Train, epochs=20, callbacks=[tensorboard_callback, early_stopping], class_weight=class_weights_dict)
 
 # %% [markdown]
+# #### **validation ON**
+
+# %%
+early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
+hist = model.fit(Train, epochs=20, callbacks=[tensorboard_callback, early_stopping], validation_data=Val, class_weight=class_weights_dict)
+
+# %% [markdown]
 # ### **Fitting without early stopping**
+
+# %% [markdown]
+# #### **Validation OFF**
 
 # %%
 hist = model.fit(Train, epochs=20, callbacks=[tensorboard_callback], class_weight=class_weights_dict)
 
 # %% [markdown]
+# #### **Validation ON**
+
+# %%
+hist = model.fit(Train, epochs=20, callbacks=[tensorboard_callback], validation_data=Val, class_weight=class_weights_dict)
+
+# %% [markdown]
 # ## **Plotting Model Performance**
 
-# %%
-fig = plt.figure()
-plt.plot(hist.history['loss'], color='teal', label='loss')
-fig.suptitle('Loss', fontsize=20)
-plt.legend(loc="upper left")
-plt.show()
+# %% [markdown]
+# ### **Validation ON**
 
 # %%
-fig = plt.figure()
-plt.plot(hist.history['accuracy'], color='teal', label='accuracy')
-fig.suptitle('Accuracy', fontsize=20)
-plt.legend(loc="upper left")
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 5))
+
+ax1.plot(hist.history['loss'], color='teal', label='train_loss')
+ax1.plot(hist.history['val_loss'], color='orange', label='val_loss')  # Validation loss
+ax1.set_title('Loss')
+ax1.legend()
+
+ax2.plot(hist.history['accuracy'], color='teal', label='train_accuracy')
+ax2.plot(hist.history['val_accuracy'], color='orange', label='val_accuracy')  # Validation accuracy
+ax2.set_title('Accuracy')
+ax2.legend()
+
 plt.show()
 
 # %% [markdown]
-# # **Evaluate Performance**
+# ### **Validation OFF**
 
 # %%
-pre = Precision()
-re = Recall()
-acc = BinaryAccuracy()
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 5))
+
+ax1.plot(hist.history['loss'], color='teal', label='train_loss')
+ax1.set_title('Loss')
+ax1.legend()
+
+ax2.plot(hist.history['accuracy'], color='teal', label='train_accuracy')
+ax2.set_title('Accuracy')
+ax2.legend()
+
+plt.show()
 
 # %% [markdown]
 # # **Test**
@@ -332,13 +400,14 @@ print(f'Precision:{pre.result().numpy()}, Recall:{re.result().numpy()}, Accuracy
 # ## **Comparison on accuracy between methods**
 
 # %% [markdown]
-# ### **On train**
+# ### **On train and validation**
 
 # %%
-fig=plt.figure(figsize=(16, 8))
-# insert comparison on accuracies
-
-plt.suptitle('Model accuracy comparison on train', fontsize=14)
+fig = plt.figure(figsize=(16, 8))
+plt.plot(hist.history['accuracy'], color='teal', label='train_accuracy')
+plt.plot(hist.history['val_accuracy'], color='orange', label='val_accuracy')
+plt.suptitle('Model accuracy comparison on train and validation', fontsize=14)
+plt.legend(loc="upper left")
 plt.show()
 
 # %% [markdown]
@@ -346,9 +415,10 @@ plt.show()
 
 # %%
 fig=plt.figure(figsize=(16, 8))
-# insert comparison on accuracies
-
+fig = plt.figure(figsize=(16, 8))
+plt.plot(acc.result, color='teal', label='test_accuracy') # to edit
 plt.suptitle('Model accuracy comparison on test', fontsize=14)
+plt.legend(loc="upper left")
 plt.show()
 
 # %% [markdown]
